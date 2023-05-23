@@ -39,7 +39,7 @@ public class StudentController {
 	
 	//Signup Method
 	//http://localhost:8080/api/student/signup
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/signup")
 	public ResponseEntity<Object> signUp(@RequestBody Student student){
 		if(!(studentRepository.existsById(student.getId()))){
@@ -52,7 +52,7 @@ public class StudentController {
     
 	// Add a Address
     //http://localhost:8080/api/student/addAddress
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/addAddress")
 	public ResponseEntity<Object> addAddress(@RequestBody AddressViewModel addressViewModel){
 		
@@ -75,7 +75,7 @@ public class StudentController {
     
     //Get Profile
     //http://localhost:8080/api/student/getProfile?id=1440
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getProfile")
     public ResponseEntity<Object> getStudentbyId(@RequestParam(name="id") String id){
     	Optional<Student> student = studentRepository.findById(id);
@@ -90,7 +90,7 @@ public class StudentController {
 	
     //Login
     //http://localhost:8080/api/student/login
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/login")
 	public ResponseEntity<Object> login(@RequestBody LoginViewModel loginViewModel){
 		try {
@@ -110,7 +110,7 @@ public class StudentController {
     
     //Change Phone no.
   	//http://localhost:8080/api/student/changePhone?id=1440
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
   	@PostMapping("/changePhone")
   	public ResponseEntity<Object> changePhone(@RequestParam(name="id") String id ,@RequestBody String phone){
     	
@@ -125,7 +125,7 @@ public class StudentController {
     
     //Change Email
   	//http://localhost:8080/api/student/changeEmail?id=1475
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
   	@PostMapping("/changeEmail")
   	public ResponseEntity<Object> changeEmail(@RequestParam(name="id") String id ,@RequestBody String email){
     	
@@ -141,7 +141,7 @@ public class StudentController {
     
     //Change Password
   	//http://localhost:8080/api/student/changePassword?id=1440
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
   	@PostMapping("/changePassword")
   	public ResponseEntity<Object> changePassword(@RequestParam(name="id") String id ,@RequestBody String password){
     	
@@ -157,7 +157,7 @@ public class StudentController {
     
     //ADD USER IMAGE
   	//http://localhost:8080/api/student/addImage?id=1440
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
   	@PostMapping("/addImage")
   	public ResponseEntity<Object> addImage(@RequestParam(name="id") String id , @RequestPart("file") MultipartFile file) throws IOException{
   		
@@ -172,7 +172,7 @@ public class StudentController {
     
     //GET USER IMAGE
   	//http://localhost:8080/api/student/getImage?id=1440
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
   	@GetMapping("/getImage")
     public ResponseEntity<Object> getImage(@RequestParam(name="id") String id){
   		
@@ -186,7 +186,7 @@ public class StudentController {
   	}
 	 // Edit User Profile
 	 // http://localhost:8080/api/student/editUserProfile
-	 @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	 @PostMapping("/editUserProfile")
 	 public ResponseEntity<Object> editUserProfile(@RequestBody EditProfileViewModel editProfileViewModel) {
 	     Optional<Student> student = studentRepository.findById(editProfileViewModel.getId());

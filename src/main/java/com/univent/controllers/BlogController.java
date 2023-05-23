@@ -34,7 +34,7 @@ public class BlogController {
 	
 	//Add Blog Method
 	//http://localhost:8080/api/blog/addBlog
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/addBlog")
 	public ResponseEntity<Object> addBlog(@RequestBody BlogViewModel blogViewModel ){
 	
@@ -67,7 +67,7 @@ public class BlogController {
 	
 	//Get ALL BLOGS
     //http://localhost:8080/api/blog/getAllBlogs
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getAllBlogs")
     public ResponseEntity<Object> getAllBlogs(){
     	try {
@@ -85,7 +85,7 @@ public class BlogController {
     
     //Get BLOG Profile
     //http://localhost:8080/api/blog/getBlog?id=
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getBlog")
     public ResponseEntity<Object> getBlog(@RequestParam(name="id") UUID id){
     	Optional<Blog> blog = blogRepository.findById(id);
@@ -100,7 +100,7 @@ public class BlogController {
 
     //Post Comment
     //http://localhost:8080/api/blog/postComment
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
     @PostMapping("/postComment")
     public ResponseEntity<Object> postComment(@RequestBody BlogCommentViewModel blogComment){
     	try {
@@ -121,7 +121,7 @@ public class BlogController {
     
     //Get Comment by Blog Id
     //http://localhost:8080/api/blog/getCommentByBlogId?id=
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
     @GetMapping("/getCommentByBlogId")
     public ResponseEntity<Object> postComment(@RequestParam(name="id") UUID id){
     	try {

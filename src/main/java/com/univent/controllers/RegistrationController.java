@@ -39,7 +39,7 @@ public class RegistrationController {
 	
 	//Add Registration Method
 	//http://localhost:8080/api/registration/addRegistration
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/addRegistration")
 	public ResponseEntity<Object> addRegistration(@RequestBody RegistrationViewModel regViewModel){
 		
@@ -61,7 +61,7 @@ public class RegistrationController {
 	
 	//GET ALL Registrations Method
 	//http://localhost:8080/api/registration/getAllRegistrations
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getAllRegistrations")
 	public ResponseEntity<Object> getAllRegistrations(){
 		try {
@@ -80,7 +80,7 @@ public class RegistrationController {
 
 	//GET  Registration Method
 	//http://localhost:8080/api/registration/getRegistration?eventId=58ab7ee3-8b25-46ac-9d66-3a67011bfa95
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getRegistration")
 	public ResponseEntity<Object> getRegistration(@RequestParam(name="eventId") UUID eventId){
 		try {
@@ -100,7 +100,7 @@ public class RegistrationController {
 	
 	//Add Attendance Method
 	//http://localhost:8080/api/registration/addAttendance
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/addAttendance")
 	public ResponseEntity<Object> addAttendance(@RequestBody List<AttendanceViewModel> attendanceViewModel){
 		
@@ -121,7 +121,7 @@ public class RegistrationController {
 	
 	//GET  Attendance Method
 	//http://localhost:8080/api/registration/getAttendance?eventId=58ab7ee3-8b25-46ac-9d66-3a67011bfa95
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getAttendance")
 	public ResponseEntity<Object> getAttendance(@RequestParam(name="eventId") UUID eventId){
 		try {
@@ -142,7 +142,7 @@ public class RegistrationController {
 	
 	//GET Events Registered By StudentID
 	//http://localhost:8080/api/registration/getEventsByStudentId?id=19k-1475
-	@CrossOrigin(origins="http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getEventsByStudentId")
 	public ResponseEntity<Object> getEventsByStudentId(@RequestParam(name="id") String id){
 		try {

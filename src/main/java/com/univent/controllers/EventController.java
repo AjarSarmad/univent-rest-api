@@ -40,7 +40,7 @@ public class EventController {
 	
 	//Add Event Method
 	//http://localhost:8080/api/event/addEvent
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/addEvent")
 	public ResponseEntity<Object> addEvent(@RequestBody EventViewModel eventViewModel ){
 	
@@ -78,7 +78,7 @@ public class EventController {
 	
 	//Get ALL EVENTS
     //http://localhost:8080/api/event/getAllEvents
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getAllEvents")
     public ResponseEntity<Object> getAllEvents(){
     	try {
@@ -91,7 +91,7 @@ public class EventController {
 
     //Get Past EVENTS
     //http://localhost:8080/api/event/getPastEvents
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getPastEvents")
     public ResponseEntity<Object> getPastEvents(){
     	try {
@@ -134,7 +134,7 @@ public class EventController {
     
 	//Get Event Profile
     //http://localhost:8080/api/event/getEvent?name=ACM
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getEvent")
     public ResponseEntity<Object> getEvent(@RequestParam(name="name") String name){
     	Optional<Event> event = eventRepository.findByName(name);

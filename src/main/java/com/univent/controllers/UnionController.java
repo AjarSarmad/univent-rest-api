@@ -28,7 +28,7 @@ public class UnionController {
 	
 	//Add Union Method
 	//http://localhost:8080/api/union/addUnion
-	@CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@PostMapping("/addUnion")
 	public ResponseEntity<Object> addUnion(@RequestBody UnionViewModel union){
 		try {
@@ -65,7 +65,7 @@ public class UnionController {
 	
 	//Get ALL Unions
     //http://localhost:8080/api/union/getAllUnions
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getAllUnions")
     public ResponseEntity<Object> getAllUnions(){
     	try {
@@ -79,7 +79,7 @@ public class UnionController {
     
     //Get Union Profile
     //http://localhost:8080/api/union/getUnion?name=ACM
-    @CrossOrigin(origins = "http://localhost:8081")
+	@CrossOrigin(origins = "*")
 	@GetMapping("/getUnion")
     public ResponseEntity<Object> getUnion(@RequestParam(name="name") String name){
     	Optional<Union> union = unionRepository.findByName(name);
