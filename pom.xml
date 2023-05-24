@@ -14,12 +14,18 @@
 	<name>UNIVENT.rest.api</name>
 	<description>Restful API for univent</description>
 	<properties>
-		 <maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<!--  <maven.compiler.source>3.10.1</maven.compiler.source>
+		<maven.compiler.target>3.10.1</maven.compiler.target> -->
 		<java.version>1.8</java.version>
 		<spring-cloud-azure.version>5.0.0</spring-cloud-azure.version>
 	</properties>
 	<dependencies>
+		<dependency>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-compiler-plugin</artifactId>
+		  <version>3.11.0</version>
+		  <type>maven-plugin</type>
+		</dependency>
 		<dependency>
    			 <groupId>org.hibernate</groupId>
     		<artifactId>hibernate-core</artifactId>
@@ -108,6 +114,15 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.11.0</version>
+		        <configuration>
+		          <source>1.8</source>
+		          <target>1.8</target>
+		        </configuration>
+		      </plugin>
 		</plugins>
 	</build>
 
