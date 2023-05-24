@@ -147,7 +147,7 @@ public class RegistrationController {
 	public ResponseEntity<Object> getEventsByStudentId(@RequestParam(name="id") String id){
 		try {
 			List<GetRegistrationByIdResponse> response = new ArrayList<GetRegistrationByIdResponse>();
-				var registrations = registrationRepository.findByStudentId(id);
+				List<Registration> registrations = registrationRepository.findByStudentId(id);
 				if (registrations!=null) {
 				for (Registration temp: registrations) {
 					response.add(new GetRegistrationByIdResponse(
