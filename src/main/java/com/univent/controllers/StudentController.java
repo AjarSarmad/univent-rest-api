@@ -86,6 +86,21 @@ public class StudentController {
     		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex);
     	}
     }
+
+	//Get Profile
+    //http://localhost:8080/api/student/getAllProfiles
+	@CrossOrigin(origins = "*")
+	@GetMapping("/getAllProfiles")
+    public ResponseEntity<Object> getAllProfiles(){
+    	try {
+    	return new ResponseEntity<Object>(studentRepository.findAll(), HttpStatus.OK);
+    	}
+    	catch(Exception ex) {
+    		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex);
+    	}
+    }
+
+
 	
 	
     //Login
